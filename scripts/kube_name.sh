@@ -17,7 +17,7 @@ get_config() {
 
 print_name() {
   local current_context
-  current_context=$(grep current < "$kube_config")
+  current_context=$(grep current < "$kube_config" | cut -f2 -d" ")
   echo "${current_context##*_}"
 }
 
